@@ -11,16 +11,16 @@ const ClassSelector = {
     seed_zero: [
         new ActionRowBuilder()
             .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-frontend').setLabel('Frontend').setStyle(ButtonStyle.Danger),
-                new ButtonBuilder().setCustomId('roleselector-backend').setLabel('Backend').setStyle(ButtonStyle.Danger),
-                new ButtonBuilder().setCustomId('roleselector-hardware').setLabel('Hardware').setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-main-frontend').setLabel('Frontend').setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-main-backend').setLabel('Backend').setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-main-hardware').setLabel('Hardware').setStyle(ButtonStyle.Danger),
         ),
         new ActionRowBuilder()
             .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-genstaff').setLabel('General Staff').setStyle(ButtonStyle.Danger),
-                new ButtonBuilder().setCustomId('roleselector-pgroup').setLabel("P'Group (พี่กลุ่ม)").setStyle(ButtonStyle.Danger),
-                new ButtonBuilder().setCustomId('roleselector-photographer').setLabel('Photographer').setStyle(ButtonStyle.Danger),
-                new ButtonBuilder().setCustomId('roleselector-graphic').setLabel('Graphic').setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-seedzero-genstaff').setLabel('General Staff').setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-seedzero-pgroup').setLabel("P'Group (พี่กลุ่ม)").setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-seedzero-photographer').setLabel('Photographer').setStyle(ButtonStyle.Danger),
+                new ButtonBuilder().setCustomId('roleselector-seedzero-graphic').setLabel('Graphic').setStyle(ButtonStyle.Danger),
         ),
     ]
 }

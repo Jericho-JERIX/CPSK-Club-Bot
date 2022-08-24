@@ -15,6 +15,6 @@ module.exports = {
     execute: async function(interact,arg){
     	interact.deferUpdate()
         await removeAllClass(interact)
-	await interact.member.roles.add(interact.guild.roles.cache.get(Roles[arg[1]]))
+	await interact.member.roles.add(interact.guild.roles.cache.get(Roles[arg[2]]))
     }
 }
