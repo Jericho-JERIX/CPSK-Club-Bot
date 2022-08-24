@@ -1,11 +1,13 @@
-const {Client,Intents,MessageButton,MessageActionRow, Message} = require('discord.js')
 const { MAIN_ROLE, SEED_ZERO_ROLE } = require('../constants/role.constant')
 
-const Roles = {...MAIN_ROLE,...SEED_ZERO_ROLE}
+const Roles = {
+    main: MAIN_ROLE,
+    seedzero: SEED_ZERO_ROLE,
+}
 
-async function removeAllClass(interact){
-    for(var i in Roles){
-        await interact.member.roles.remove(interact.guild.roles.cache.get(Roles[i]))
+async function removeAllClass(interact,arg){
+    for(var i in Roles[arg[1]]){
+        await interact.member.roles.remove(interact.guild.roles.cache.get(Roles[arg[1]][i].id))
     }
 }
 
@@ -14,7 +16,7 @@ module.exports = {
     alias: ['roleselector'],
     execute: async function(interact,arg){
     	interact.deferUpdate()
-        await removeAllClass(interact)
-	await interact.member.roles.add(interact.guild.roles.cache.get(Roles[arg[2]]))
+        await removeAllClass(interact,arg)
+	    await interact.member.roles.add(interact.guild.roles.cache.get(Roles[arg[1]][arg[2]].id))
     }
 }
