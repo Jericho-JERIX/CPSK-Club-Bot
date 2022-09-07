@@ -11,7 +11,7 @@ module.exports = {
     alias: ['roleselector'],
     execute: async function(interact,arg){
     	
-	interact.deferUpdate(),5000
+	interact.deferUpdate()
 
         let role_id = ROLES[arg[1]].roles[arg[2]].id
         let target_role = interact.guild.roles.cache.get(role_id)
