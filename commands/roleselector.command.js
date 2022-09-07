@@ -1,28 +1,43 @@
 const {ActionRowBuilder, ButtonBuilder, ButtonStyle} = require('discord.js')
-const { SEED_ZERO_ROLE, MAIN_ROLE } = require('../constants/role.constant')
+const { MAIN, SEED_ZERO, CPSK_SPORT } = require('../constants/role.constant')
 
-const ClassSelector = {
-    main: [
+const Button = {
+    MAIN : [
         new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-main-cpe').setLabel(MAIN_ROLE.cpe.label).setStyle(ButtonStyle.Primary),
-                new ButtonBuilder().setCustomId('roleselector-main-ske').setLabel(MAIN_ROLE.ske.label).setStyle(ButtonStyle.Primary),
+        .addComponents(
+            new ButtonBuilder().setCustomId('roleselector-MAIN-cpe').setLabel(MAIN.roles.cpe.label).setStyle(MAIN.style),
+            new ButtonBuilder().setCustomId('roleselector-MAIN-ske').setLabel(MAIN.roles.ske.label).setStyle(MAIN.style),
         )
     ],
-    seed_zero: [
+    SEED_ZERO : [
         new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-seedzero-frontend').setLabel(SEED_ZERO_ROLE.frontend.label).setStyle(ButtonStyle.Success),
-                new ButtonBuilder().setCustomId('roleselector-seedzero-backend').setLabel(SEED_ZERO_ROLE.backend.label).setStyle(ButtonStyle.Success),
-                new ButtonBuilder().setCustomId('roleselector-seedzero-hardware').setLabel(SEED_ZERO_ROLE.hardware.label).setStyle(ButtonStyle.Success),
+        .addComponents(
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-frontend').setLabel(SEED_ZERO.roles.frontend.label).setStyle(SEED_ZERO.style),
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-backend').setLabel(SEED_ZERO.roles.backend.label).setStyle(SEED_ZERO.style),
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-hardware').setLabel(SEED_ZERO.roles.hardware.label).setStyle(SEED_ZERO.style),
         ),
         new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-seedzero-genstaff').setLabel(SEED_ZERO_ROLE.genstaff.label).setStyle(ButtonStyle.Success),
-                new ButtonBuilder().setCustomId('roleselector-seedzero-pgroup').setLabel(SEED_ZERO_ROLE.pgroup.label).setStyle(ButtonStyle.Success),
-                new ButtonBuilder().setCustomId('roleselector-seedzero-photographer').setLabel(SEED_ZERO_ROLE.photographer.label).setStyle(ButtonStyle.Success),
-                new ButtonBuilder().setCustomId('roleselector-seedzero-graphic').setLabel(SEED_ZERO_ROLE.graphic.label).setStyle(ButtonStyle.Success),
+        .addComponents(
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-genstaff').setLabel(SEED_ZERO.roles.genstaff.label).setStyle(SEED_ZERO.style),
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-pgroup').setLabel(SEED_ZERO.roles.pgroup.label).setStyle(SEED_ZERO.style),
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-photographer').setLabel(SEED_ZERO.roles.photographer.label).setStyle(SEED_ZERO.style),
+            new ButtonBuilder().setCustomId('roleselector-SEED_ZERO-graphic').setLabel(SEED_ZERO.roles.graphic.label).setStyle(SEED_ZERO.style),
         ),
+    ],
+    CPSK_SPORT: [
+        new ActionRowBuilder()
+        .addComponents(
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-valorant').setLabel(CPSK_SPORT.roles.valorant.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.valorant.emoji),
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-rov').setLabel(CPSK_SPORT.roles.rov.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.rov.emoji),
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-dota2').setLabel(CPSK_SPORT.roles.dota2.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.dota2.emoji),
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-pubg').setLabel(CPSK_SPORT.roles.pubg.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.pubg.emoji),
+        ),
+        new ActionRowBuilder()
+        .addComponents(
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-basketball').setLabel(CPSK_SPORT.roles.basketball.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.basketball.emoji),
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-football').setLabel(CPSK_SPORT.roles.football.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.football.emoji),
+            new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-chariball').setLabel(CPSK_SPORT.roles.chariball.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.chariball.emoji),
+        )
     ]
 }
 
@@ -33,8 +48,12 @@ module.exports = {
     roleRequirement: [],
     channelRequirement: [],
     execute: function(message,arg){
-        message.channel.send({content:"📌 เลือกภาควิชาของตัวเอง",components: ClassSelector.main})
-        message.channel.send({content:"🌱 เลือก Role สำหรับกิจกรรม  **Seed: Zero**\nทุกคนสามารถดูตำแหน่งของตัวเองที่รูปด้านล่างนี้ 👇",components: ClassSelector.seed_zero,files: ["./img/staff_result.png"]})
+        switch(arg[1]){
+            case 'main': message.channel.send({content:"📌 เลือกภาควิชาของตัวเอง",components: Button.MAIN}); break
+            case 'seed-zero': message.channel.send({content:"🌱 เลือก Role สำหรับกิจกรรม  **Seed: Zero**\nทุกคนสามารถดูตำแหน่งของตัวเองที่รูปด้านล่างนี้ 👇",components: Button.SEED_ZERO,files: ["./img/staff_result.png"]}); break
+            case 'cpsk-sport': message.channel.send({content:"🌟 เลือกกีฬาที่ลงแข่ง 🌟",components: Button.CPSK_SPORT}); break
+            default: message.channel.send("Not found")
+        }
         return 0
     }
 }
