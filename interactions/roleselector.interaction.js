@@ -10,6 +10,9 @@ module.exports = {
     name: "roleselector",
     alias: ['roleselector'],
     execute: async function(interact,arg){
+    	
+	interact.deferUpdate(),5000
+
         let role_id = ROLES[arg[1]].roles[arg[2]].id
         let target_role = interact.guild.roles.cache.get(role_id)
         
@@ -25,6 +28,5 @@ module.exports = {
             interact.member.roles.add(target_role)
         }
 	    
-    	await interact.deferUpdate()
     }
 }
