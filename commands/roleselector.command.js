@@ -1,5 +1,5 @@
 const {ActionRowBuilder, ButtonBuilder, ButtonStyle} = require('discord.js')
-const { MAIN, SEED_ZERO, CPSK_SPORT, LET_ME_TIRED_2_ROLES } = require('../constants/role.constant')
+const { MAIN, SEED_ZERO, CPSK_SPORT, LET_ME_TIRED_2 } = require('../constants/role.constant')
 
 const Button = {
     MAIN : [
@@ -42,17 +42,17 @@ const Button = {
     LET_ME_TIRED_2: [
         new ActionRowBuilder()
             .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-graphic').setLabel(LET_ME_TIRED_2_ROLES.roles.graphic.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.graphic.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pgroup').setLabel(LET_ME_TIRED_2_ROLES.roles.pgroup.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.pgroup.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-generalStaff').setLabel(LET_ME_TIRED_2_ROLES.roles.generalstaff.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.generalstaff.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-photographer').setLabel(LET_ME_TIRED_2_ROLES.roles.photographer.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.photographer.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-graphic').setLabel(LET_ME_TIRED_2.roles.graphic.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.graphic.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pgroup').setLabel(LET_ME_TIRED_2.roles.pgroup.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.pgroup.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-generalStaff').setLabel(LET_ME_TIRED_2.roles.generalstaff.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.generalstaff.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-photographer').setLabel(LET_ME_TIRED_2.roles.photographer.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.photographer.emoji),
         ),
         new ActionRowBuilder()
             .addComponents(
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pythonteacher').setLabel(LET_ME_TIRED_2_ROLES.roles.pythonteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.pythonteacher.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-webdevteacher').setLabel(LET_ME_TIRED_2_ROLES.roles.wendevteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.wendevteacher.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-hardwareteacher').setLabel(LET_ME_TIRED_2_ROLES.roles.hardwareteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.hardwareteacher.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-ta').setLabel(LET_ME_TIRED_2_ROLES.roles.ta.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.ta.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pythonteacher').setLabel(LET_ME_TIRED_2.roles.pythonteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.pythonteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-webdevteacher').setLabel(LET_ME_TIRED_2.roles.wendevteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.wendevteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-hardwareteacher').setLabel(LET_ME_TIRED_2.roles.hardwareteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.hardwareteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-ta').setLabel(LET_ME_TIRED_2.roles.ta.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.ta.emoji),
         ),
     ]
 }
