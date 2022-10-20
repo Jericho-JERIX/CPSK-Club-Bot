@@ -93,5 +93,52 @@ module.exports = {
                 emoji: '941686739066556487',
             },
         }
-    }
+    },
+
+    LET_ME_TIRED_2_ROLES: {
+        multiple_select: false,
+        style: ButtonStyle.Primary,
+        roles: {
+            graphic: {
+                id: '1032288467142578197',
+                label: 'Graphic',
+                emoji: '🎨',
+            },
+            pgroup: {
+                id: '1032288686286585887',
+                label: "P'Group",
+                emoji: '🧑🏻',
+            },
+            generalstaff: {
+                id: '1032288813348823161',
+                label: 'General Staff',
+                emoji: '⭐',
+            },
+            photographer: {
+                id: '1032289857340440656',
+                label: 'Photographer',
+                emoji: '📷',
+            },
+            pythonteacher: {
+                id: '1032289036804571228',
+                label: 'Python Teacher',
+                emoji: '🏀',
+            },
+            wendevteacher: {
+                id: '1032289435208917062',
+                label: 'WebDev Teacher',
+                emoji: '💻',
+            },
+            hardwareteacher: {
+                id: '1032289605522829332',
+                label: 'Hardware Teacher',
+                emoji: '🤖',
+            },
+            ta: {
+                id: '1032288917015248956',
+                label: 'TA',
+                emoji: '📖',
+            },
+        }
+    },
 }

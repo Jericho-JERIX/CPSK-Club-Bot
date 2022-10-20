@@ -1,5 +1,5 @@
 const {ActionRowBuilder, ButtonBuilder, ButtonStyle} = require('discord.js')
-const { MAIN, SEED_ZERO, CPSK_SPORT } = require('../constants/role.constant')
+const { MAIN, SEED_ZERO, CPSK_SPORT, LET_ME_TIRED_2_ROLES } = require('../constants/role.constant')
 
 const Button = {
     MAIN : [
@@ -38,6 +38,22 @@ const Button = {
             new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-football').setLabel(CPSK_SPORT.roles.football.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.football.emoji),
             new ButtonBuilder().setCustomId('roleselector-CPSK_SPORT-chariball').setLabel(CPSK_SPORT.roles.chariball.label).setStyle(CPSK_SPORT.style).setEmoji(CPSK_SPORT.roles.chariball.emoji),
         )
+    ],
+    LET_ME_TIRED_2: [
+        new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-graphic').setLabel(LET_ME_TIRED_2_ROLES.roles.graphic.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.graphic.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pgroup').setLabel(LET_ME_TIRED_2_ROLES.roles.pgroup.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.pgroup.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-generalStaff').setLabel(LET_ME_TIRED_2_ROLES.roles.generalstaff.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.generalstaff.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-photographer').setLabel(LET_ME_TIRED_2_ROLES.roles.photographer.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2_ROLES.roles.photographer.emoji),
+        ),
+        new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pythonteacher').setLabel(LET_ME_TIRED_2_ROLES.roles.pythonteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.pythonteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-webdevteacher').setLabel(LET_ME_TIRED_2_ROLES.roles.wendevteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.wendevteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-hardwareteacher').setLabel(LET_ME_TIRED_2_ROLES.roles.hardwareteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.hardwareteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-ta').setLabel(LET_ME_TIRED_2_ROLES.roles.ta.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2_ROLES.roles.ta.emoji),
+        ),
     ]
 }
 
@@ -52,6 +68,7 @@ module.exports = {
             case 'main': message.channel.send({content:"📌 เลือกภาควิชาของตัวเอง",components: Button.MAIN}); break
             case 'seed-zero': message.channel.send({content:"🌱 เลือก Role สำหรับกิจกรรม  **Seed: Zero**\nทุกคนสามารถดูตำแหน่งของตัวเองที่รูปด้านล่างนี้ 👇",components: Button.SEED_ZERO,files: ["./img/staff_result.png"]}); break
             case 'cpsk-sport': message.channel.send({content:"🌟 เลือกกีฬาที่ลงแข่ง 🌟",components: Button.CPSK_SPORT}); break
+            case 'lmt2': message.channel.send({content:"เลือกตำแหน่งหน้าที่ของตัวเองเลยยย 😄😄",components: Button.LET_ME_TIRED_2}); break
             default: message.channel.send("Not found")
         }
         return 0
