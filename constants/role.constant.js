@@ -95,7 +95,7 @@ module.exports = {
         }
     },
 
-    LET_ME_TIRED_2_ROLES: {
+    LET_ME_TIRED_2: {
         multiple_select: false,
         style: ButtonStyle.Primary,
         roles: {
@@ -122,7 +122,7 @@ module.exports = {
             pythonteacher: {
                 id: '1032289036804571228',
                 label: 'Python Teacher',
-                emoji: '🏀',
+                emoji: '🐍',
             },
             wendevteacher: {
                 id: '1032289435208917062',
