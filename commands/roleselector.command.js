@@ -44,7 +44,7 @@ const Button = {
             .addComponents(
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-graphic').setLabel(LET_ME_TIRED_2.roles.graphic.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.graphic.emoji),
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pgroup').setLabel(LET_ME_TIRED_2.roles.pgroup.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.pgroup.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-generalStaff').setLabel(LET_ME_TIRED_2.roles.generalstaff.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.generalstaff.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-generalstaff').setLabel(LET_ME_TIRED_2.roles.generalstaff.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.generalstaff.emoji),
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-photographer').setLabel(LET_ME_TIRED_2.roles.photographer.label).setStyle(ButtonStyle.Primary).setEmoji(LET_ME_TIRED_2.roles.photographer.emoji),
         ),
         new ActionRowBuilder()
