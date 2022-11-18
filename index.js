@@ -4,7 +4,8 @@ const { PREFIX } = require('./constants/setting.constant')
 const fs = require('fs')
 
 const dotenv = require('dotenv')
-const LoginEvent = require('./modules/LoginEvent')
+const LoginEvent = require('./modules/login.module')
+const JoinEvent = require('./modules/join.module')
 dotenv.config()
 
 const Command = getAllCommands()
@@ -16,7 +17,8 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildMessageTyping,
         GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.MessageContent
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMembers,
     ],
     partials: [Partials.Channel]
 })
@@ -74,4 +76,8 @@ client.on('interactionCreate',async (interact)=>{
         var arg = interact.customId.split('-')
         Interaction[arg[0]].execute(interact,arg)
     }
+})
+
+client.on('guildMemberAdd',(member) => {
+    JoinEvent.execute(member)
 })

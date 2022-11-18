@@ -1,5 +1,5 @@
 const {ActionRowBuilder, ButtonBuilder, ButtonStyle} = require('discord.js')
-const { MAIN, SEED_ZERO, CPSK_SPORT, LET_ME_TIRED_2 } = require('../constants/role.constant')
+const { MAIN, SEED_ZERO, CPSK_SPORT, LET_ME_TIRED_2, BARCAMP } = require('../constants/role.constant')
 
 const Button = {
     MAIN : [
@@ -54,6 +54,20 @@ const Button = {
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-hardwareteacher').setLabel(LET_ME_TIRED_2.roles.hardwareteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.hardwareteacher.emoji),
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-ta').setLabel(LET_ME_TIRED_2.roles.ta.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.ta.emoji),
         ),
+    ],
+    BARCAMP: [
+        new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder().setCustomId('roleselector-BARCAMP-event').setLabel(BARCAMP.roles.event.label).setStyle(BARCAMP.style).setEmoji(BARCAMP.roles.event.emoji),
+                new ButtonBuilder().setCustomId('roleselector-BARCAMP-finance').setLabel(BARCAMP.roles.finance.label).setStyle(BARCAMP.style).setEmoji(BARCAMP.roles.finance.emoji),
+                new ButtonBuilder().setCustomId('roleselector-BARCAMP-webdev').setLabel(BARCAMP.roles.webdev.label).setStyle(BARCAMP.style).setEmoji(BARCAMP.roles.webdev.emoji),
+        ),
+        new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder().setCustomId('roleselector-BARCAMP-graphic').setLabel(BARCAMP.roles.graphic.label).setStyle(BARCAMP.style).setEmoji(BARCAMP.roles.graphic.emoji),
+                new ButtonBuilder().setCustomId('roleselector-BARCAMP-pr').setLabel(BARCAMP.roles.pr.label).setStyle(BARCAMP.style).setEmoji(BARCAMP.roles.pr.emoji),
+                new ButtonBuilder().setCustomId('roleselector-BARCAMP-media').setLabel(BARCAMP.roles.media.label).setStyle(BARCAMP.style).setEmoji(BARCAMP.roles.media.emoji),
+        ),
     ]
 }
 
@@ -69,6 +83,7 @@ module.exports = {
             case 'seed-zero': message.channel.send({content:"🌱 เลือก Role สำหรับกิจกรรม  **Seed: Zero**\nทุกคนสามารถดูตำแหน่งของตัวเองที่รูปด้านล่างนี้ 👇",components: Button.SEED_ZERO,files: ["./img/staff_result.png"]}); break
             case 'cpsk-sport': message.channel.send({content:"🌟 เลือกกีฬาที่ลงแข่ง 🌟",components: Button.CPSK_SPORT}); break
             case 'lmt2': message.channel.send({content:"เลือกตำแหน่งหน้าที่ของตัวเองเลยยย 😄😄",components: Button.LET_ME_TIRED_2}); break
+            case 'barcamp': message.channel.send({content:"เลือกตำแหน่งหน้าที่ของตัวเองเลยยย 😄😄",components: Button.BARCAMP}); break
             default: message.channel.send("Not found")
         }
         return 0

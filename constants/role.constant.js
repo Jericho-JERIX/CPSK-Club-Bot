@@ -141,4 +141,41 @@ module.exports = {
             },
         }
     },
+
+    BARCAMP: {
+        multiple_select: false,
+        style: ButtonStyle.Primary,
+        roles: {
+            event: {
+                id: '1043156503605035049',
+                label: 'Event',
+                emoji: '🎈',
+            },
+            finance: {
+                id: '1043156507228897390',
+                label: "Finance & Sponsor",
+                emoji: '💸',
+            },
+            webdev: {
+                id: '1043156515336503406',
+                label: 'Website Developer',
+                emoji: '💻',
+            },
+            graphic: {
+                id: '1043156521854439485',
+                label: 'Graphics',
+                emoji: '🎨',
+            },
+            pr: {
+                id: '1043156525398630500',
+                label: 'PR & Contents',
+                emoji: '⭐',
+            },
+            media: {
+                id: '1043156531937562664',
+                label: 'Media & Technician',
+                emoji: '⚡',
+            },
+        }
+    },
 }
