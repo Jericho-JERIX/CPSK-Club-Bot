@@ -124,7 +124,7 @@ module.exports = {
                 label: 'Python Teacher',
                 emoji: '🐍',
             },
-            wendevteacher: {
+            webdevteacher: {
                 id: '1032289435208917062',
                 label: 'WebDev Teacher',
                 emoji: '💻',

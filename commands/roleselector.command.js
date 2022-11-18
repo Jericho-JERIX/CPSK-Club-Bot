@@ -50,7 +50,7 @@ const Button = {
         new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-pythonteacher').setLabel(LET_ME_TIRED_2.roles.pythonteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.pythonteacher.emoji),
-                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-webdevteacher').setLabel(LET_ME_TIRED_2.roles.wendevteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.wendevteacher.emoji),
+                new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-webdevteacher').setLabel(LET_ME_TIRED_2.roles.webdevteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.webdevteacher.emoji),
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-hardwareteacher').setLabel(LET_ME_TIRED_2.roles.hardwareteacher.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.hardwareteacher.emoji),
                 new ButtonBuilder().setCustomId('roleselector-LET_ME_TIRED_2-ta').setLabel(LET_ME_TIRED_2.roles.ta.label).setStyle(ButtonStyle.Danger).setEmoji(LET_ME_TIRED_2.roles.ta.emoji),
         ),
